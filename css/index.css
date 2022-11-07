@@ -1,0 +1,148 @@
+@import url("https://fonts.googleapis.com/css2?family=Halant:wght@700&family=Nunito+Sans:wght@300&display=swap");
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Nunito Sans", sans-serif;
+}
+
+body {
+    background-image: url("https://images.unsplash.com/photo-1618005198919-d3d4b5a92ead?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80");
+    width: 100vw;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+}
+
+li {
+    list-style: none;
+    display: inline-block;
+    font-size: 18px;
+    margin: 0 6px;
+    cursor: pointer;
+}
+
+a {
+    color: black;
+    text-decoration: none !important;
+}
+
+a:hover {
+    color: crimson;
+}
+
+.btn_navbar {
+    position: relative;
+    z-index: 10;
+    /* ở màn hình 768px thì block cái icon ra  */
+    display: none;
+}
+
+.closeBar,
+.openBar {
+    position: absolute;
+    top: 50%;
+    right: 5%;
+    transform: translateY(-50%);
+    /* căn giữa theo trục Oy cho icon  */
+    cursor: pointer;
+}
+
+.logo-nike {
+    width: 110px;
+}
+
+/* sau khi display : flex, xét kích thước % cụ thể
+*/
+.logo {
+    width: 15%;
+}
+
+.nav_content {
+    width: 85%;
+}
+
+.closeBar {
+    color: black;
+}
+
+.closeBar:hover {
+    color: red;
+}
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width:767.98px) {
+    .logo {
+        display: flex;
+        justify-content: space-around;
+        width: initial;
+        /* dùng để làm mờ cái nền background phía sau  */
+        background-color: rgba(255, 255, 255, 0.08);
+        backdrop-filter: blur(35px);
+    }
+
+    .nav_bar .container-md {
+        /* đè CSS padding 15px của container đi  */
+        padding: 0 !important;
+    }
+
+    .logo-nike {
+        width: 80px;
+    }
+
+    .btn_navbar {
+        display: block;
+    }
+
+    /* chuyển nav ngang thành nav dọc  */
+    .nav-list{
+        position: fixed;
+        top:0;
+        right: -100%;
+        height: 100vh;
+        width: 40%;
+        background-color: rgba(0, 0, 0, 0.08);
+        backdrop-filter: blur(35px);
+        z-index: 100;
+        transition: .5s;
+        overflow: hidden;
+    }
+    .nav-list{
+        flex-direction: column;
+        text-align: center;
+        margin-top: 80px;
+    }
+    a{
+        font-size: 16px;
+    }
+    .menu-list li {
+        display: block;
+        margin: 18px 0;
+    }
+    .nav-icon{
+        /* tắt cái margin left auto đi, để nó căn giữa  */
+        margin: unset!important;
+    }
+    /* vô js add cái class .changeBar và .none này vào để có hiệu ứng  */
+    .changeBar{
+        right: 0;
+    }
+    .none{
+        display: none;
+    }
+}
+@media screen and (max-width:400px) {
+    /* sang màn hình 400 nav chiếm hết màn hình  */
+    .nav-list{
+        width: 100%;
+    }
+}
